@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custo Final do Carro - exercicio 7</title>
+</head>
+<body>
+
+<h2>Calculadora de Custo Final do Carro</h2>
+
+<label for="custoFabrica">Custo de Fábrica:</label>
+<input type="number" id="custoFabrica"><br>
+
+<label for="percDistribuidor">% do Distribuidor:</label>
+<input type="number" id="percDistribuidor"><br>
+
+<label for="percImpostos">% de Impostos:</label>
+<input type="number" id="percImpostos"><br>
+
+<button onclick="calcularCustoFinal()">Calcular</button>
+
+<div id="resultado"></div>
+
+<script>
+    function calcularCustoFinal() {
+    
+        var custoFabrica = parseFloat(document.getElementById("custoFabrica").value);
+        var percDistribuidor = parseFloat(document.getElementById("percDistribuidor").value);
+        var percImpostos = parseFloat(document.getElementById("percImpostos").value);
+
+       
+        if (isNaN(custoFabrica) || isNaN(percDistribuidor) || isNaN(percImpostos)) {
+            document.getElementById("resultado").textContent = " insira valores numéricos válidos ";
+            return;
+        }
+
+    
+        var custoFinal = custoFabrica + (custoFabrica * percDistribuidor / 100) + (custoFabrica * percImpostos / 100);
+
+       
+        document.getElementById("resultado").textContent = "Valor Final: R$" + custoFinal.toFixed(2);
+    }
+</script>
+
+</body>
+</html>

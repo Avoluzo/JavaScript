@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares - exercicio 6</title>
+</head>
+<body>
+
+<h2>Números Pares do Array</h2>
+
+<div id="numerosPares"></div>
+
+<script>
+  
+    var numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+ 
+    var numerosParesString = "";
+
+ 
+    for (var i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0) {
+            numerosParesString += numeros[i] + ", "; 
+        }
+    }
+
+
+    numerosParesString = numerosParesString.slice(0, -2);
+
+
+    document.getElementById("numerosPares").innerHTML = "<p>Números pares: " + numerosParesString + "</p>";
+</script>
+
+</body>
+</html>
